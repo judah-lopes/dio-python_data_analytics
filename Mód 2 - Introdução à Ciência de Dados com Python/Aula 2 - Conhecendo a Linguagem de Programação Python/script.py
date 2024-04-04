@@ -1,27 +1,22 @@
-#! -------- Tópico 1 - Tipos de dados --------
+#! -------- Tópico 1 - Modo Interativo --------
 
-# ===== etapa 1 - tipos =====
+# ===== etapa 1 - Usando o Modo Interativo =====
 #
-#   Texto     = str
-#   Numérico  = int, float, complex
-#   Sequência = list, tuple, range
-#   Mapa      = dict
-#   Coleção   = set, frozenset
-#   Booleano  = bool
-#   Binário   = bytes, bytearray, memoryview
+#   O modo interativo possibilita o dev escrever o código
+#  e ver o resultado na mesma hora. (tipo Live Preview).
+#   Para executar o modo, tem duas maneiras:
+#       - Escrever "python" no terminal, chamando o executor
+#       - Usando a flag -i no arquivo "python - i scrip.py"
 
-# ===== etapa 2 - tipos numericos =====
+# ===== etapa 2 - Funções dir e help =====
+#   _DIR_____________
+#   dir()    = lista do escopo local
+#   dis(arg) = lista de atributos válidos para o objeto
+#   
+#   _HELP____________
+#   help() = invoca o sistema de ajuda, tipo o google
+#   help(arg) =  invoca todas as info do argumento, inclusive os metodos
 #
-#   int()   = inteiro, negativo ou positivo
-#   float() = com "virgula"
-
-# ===== etapa 3 - booleano e strings =====
 #
-#   bool() = true ou false (subclasse de int, 0 = false, 1+ = true)
-#   str()  = cadeia de caracteres
-
-print(1 + 3 + 2)
-print(1.5 + 4 + 3.5)
-print(True)
-print(False)
-print('carlito teves')
+#
+print('pedro')
