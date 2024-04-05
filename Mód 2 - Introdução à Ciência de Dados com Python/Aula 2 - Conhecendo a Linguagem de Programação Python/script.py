@@ -1,47 +1,19 @@
-# -------- Tópico 4 - Conversão de Dados --------
+# -------- Tópico 5 - Funções de entrada e saída --------
 
-#! ===== etapa 1 - Convertendo tipos =====
+#! ===== etapa 1 - Lendo valores com a função input =====
 #   
-#!  - inteiro (int) pra float:
+nome = input('Informe seu nome: ') 
+sobrenome = input('Informe seu sobrenome: ') 
 #
-preco = 10
-print(preco)
-
-preco = float(preco)
-print(preco)
-#   OU usando divisão
-preco = preco / 1
-print(preco)
+#! ===== etapa 2 - Exibindo valores com a função print =====
+#   Todos os objetos são convertidos para string
+#   1 argumento obrigatório e
+#   4 opcionais:
+#   - sep (separa os objetos)
+#   - end (termina os objetos)
+#   - file
+#   - flush
 #
-#__________________________________________
-#!  - float pra inteiro
-#
-valor = 10.50
-print(valor)
-
-valor = int(valor)
-print(valor)
-#   e pra EVITAR que saia um float na divisão, use duas barras
-valor = 10 // 2
-print(valor)
-#
-#__________________________________________
-#!  - numerico pra string
-#
-preco_por_pao = 0.80
-quantidade_de_paes = 10
-
-print(str(preco_por_pao))
-print(str(quantidade_de_paes))
-
-frase = f"preço por pão {preco_por_pao}, quantidade de pães {quantidade_de_paes}"
-print(frase)
-#
-#__________________________________________
-#!  - string pra numerico
-#
-idade = '14'
-peso = '70.30'
-
-print(int(idade))
-print(float(peso))
+print(nome, sobrenome)
+print(nome, sobrenome, end="...\n") # \n = quebra de linha
+print(nome, sobrenome, sep=' #')
