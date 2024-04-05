@@ -1,25 +1,47 @@
-#! -------- Tópico 3 - Variáveies e Constantes --------
+# -------- Tópico 4 - Conversão de Dados --------
 
-# ===== etapa 1 - constante =====
+#! ===== etapa 1 - Convertendo tipos =====
 #   
-#   Não existe constante em python. Como >CONVENÇÃO<, quando
-#   queremos uma constante, escrevemos o nome da variável TODA em maiúsculo.
+#!  - inteiro (int) pra float:
+#
+preco = 10
+print(preco)
 
-AGE = 19
+preco = float(preco)
+print(preco)
+#   OU usando divisão
+preco = preco / 1
+print(preco)
+#
+#__________________________________________
+#!  - float pra inteiro
+#
+valor = 10.50
+print(valor)
 
-print(AGE)
+valor = int(valor)
+print(valor)
+#   e pra EVITAR que saia um float na divisão, use duas barras
+valor = 10 // 2
+print(valor)
+#
+#__________________________________________
+#!  - numerico pra string
+#
+preco_por_pao = 0.80
+quantidade_de_paes = 10
 
-# ===== etapa 2 - boas práticas =====
-#   
-#   - O padrão dos nomes deve ser o snake case. ("preço_total")
-#   - Escolher nomes sujestivos.
-#   - Nome de constantes todos em MAIÚSCULO.
+print(str(preco_por_pao))
+print(str(quantidade_de_paes))
 
-SALDO = 10000
+frase = f"preço por pão {preco_por_pao}, quantidade de pães {quantidade_de_paes}"
+print(frase)
+#
+#__________________________________________
+#!  - string pra numerico
+#
+idade = '14'
+peso = '70.30'
 
-limite_saque_diário = 1000
-
-dias_para_acabar_o_saldo = SALDO / limite_saque_diário
-
-print(f'Serão necessários {int(dias_para_acabar_o_saldo)} para sacando o limite de R${float(limite_saque_diário)} para o dinheiro do saldo acabar.')
-
+print(int(idade))
+print(float(peso))
