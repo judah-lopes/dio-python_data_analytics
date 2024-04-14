@@ -1,32 +1,20 @@
-# -------- Tópico 1 - Operadores Aritméticos --------
+saldo = 450
+saque = 200
 
-#! ===== etapa 1 - Conhecendo os operadores aritméticos =====
-#   
-#?  ADIÇÃO
-print(4 + 4)
-#________________________
-#?  SUBTRAÇÃO 
-print(4 - 4)
-#________________________
-#?  MUTIPLICAÇÃO
-print(4 * 4)
-#________________________
-#?  DIVISÃO
-print(10 / 4)
-#________________________
-#?  DIVISÃO sem resto
-print(10 // 4)
-#________________________
-#?  MÓDULO
-print(10 % 4)
-#________________________
-#?  EXPONÊNCIAÇÃO
-print(10 ** 4)
-#   
-#! ===== etapa 2 - Precedência de operadores =====
-#   
-#   A ordem das operações é 
-#   - parenteses
-#   - expoentes
-#   - mutiplicações e divisões
-#   - adição e subtração
+# igualdade
+print(saldo == saque)
+
+# diferença
+print(saldo != saque)
+
+# maior que
+print(saldo > saque)
+
+# maior ou igual
+print(saldo >= saque)
+
+# menor que
+print(saldo < saque)
+
+# menor ou igual
+print(saldo <= saque)
