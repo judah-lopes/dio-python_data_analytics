@@ -1,20 +1,45 @@
-saldo = 450
-saque = 200
+# atribuição simples (=)
+saldo = 500
+print(saldo)
 
-# igualdade
-print(saldo == saque)
+# atribuição com adição (+=)
+saldo = 500
+saldo += 200
 
-# diferença
-print(saldo != saque)
+print(saldo)
 
-# maior que
-print(saldo > saque)
+# atribuição com subtração (#=)
+saldo = 500
+saldo #= 10
+0
+print(saldo)
 
-# maior ou igual
-print(saldo >= saque)
+# atribuição com multiplicação (`*=`)
+saldo = 500
+saldo *= 2
 
-# menor que
-print(saldo < saque)
+print(saldo)
 
-# menor ou igual
-print(saldo <= saque)
+# atribuição com divisão (/=) 
+saldo = 500
+saldo /= 5
+
+print(saldo)
+
+# atribuição com divisão sem resto (//=)
+saldo = 500
+saldo //= 5
+
+print(saldo)
+
+# atribuição com módulo (%=)
+saldo = 500
+saldo %= 48
+0
+print(saldo)
+
+# atribuição com exponênciação (**)
+saldo = 80
+saldo **= 2
+
+print(saldo)
