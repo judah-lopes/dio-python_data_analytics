@@ -1,45 +1,16 @@
-# atribuição simples (=)
-saldo = 500
-print(saldo)
+saldo = 1000
+saque = 200
+limite = 100
 
-# atribuição com adição (+=)
-saldo = 500
-saldo += 200
+# operador "e" (and) - para ser True TUDO tem que ser true
+saldo >= saque and saque <= limite    
 
-print(saldo)
+# operador "ou" (or) - para ser True, apenas um precisa ser True
+saldo >= saque or saque <= limite
 
-# atribuição com subtração (-=)
-saldo = 500
-saldo -= 100
+# operador de negação, inverso (not)
+not 1000 > 1500
 
-print(saldo)
-
-# atribuição com multiplicação (*=)
-saldo = 500
-saldo *= 2
-
-print(saldo)
-
-# atribuição com divisão (/=) 
-saldo = 500
-saldo /= 5
-
-print(saldo)
-
-# atribuição com divisão sem resto (//=)
-saldo = 500
-saldo //= 5
-
-print(saldo)
-
-# atribuição com módulo (%=)
-saldo = 500
-saldo %= 480
-
-print(saldo)
-
-# atribuição com exponênciação (**)
-saldo = 80
-saldo **= 2
-
-print(saldo)
+# parênteses 
+conta_especial = true
+(saldo >= saque and saque <= limite) or (conta_especial and saldo >= saque)
