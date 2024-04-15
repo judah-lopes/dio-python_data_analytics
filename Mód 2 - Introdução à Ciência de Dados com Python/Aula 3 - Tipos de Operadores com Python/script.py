@@ -8,13 +8,13 @@ saldo += 200
 
 print(saldo)
 
-# atribuição com subtração (#=)
+# atribuição com subtração (-=)
 saldo = 500
-saldo #= 10
-0
+saldo -= 100
+
 print(saldo)
 
-# atribuição com multiplicação (`*=`)
+# atribuição com multiplicação (*=)
 saldo = 500
 saldo *= 2
 
