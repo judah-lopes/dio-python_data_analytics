@@ -1,12 +1,14 @@
-# São operadores utilizados para comparar se os dois objetos testados ocupam a mesma posição na memória.
+# São operadores utilizados para verificar se um objeto está presente em uma sequência.    
+#      *como se fosse um includes()*
 
-# operador "é" (is)
-curso = 'Curso de Python'
-nome_curso = curso
-saldo, limite = 200, 200
+# - operador "em" (in)
+curso = "Curso de Python"
+frutas = ['laranja', 'uva', 'limão']
+saques = [1500, 100]
 
-curso is nome_curso
+"Python" in curso
+# >> True    <--- string é uma sequência de caracteres
 
-curso is not nome_curso
+"maçã" not in frutas
 
-saldo is limite
+200 in saques
