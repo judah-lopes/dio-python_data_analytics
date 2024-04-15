@@ -34,8 +34,8 @@ print(saldo)
 
 # atribuição com módulo (%=)
 saldo = 500
-saldo %= 48
-0
+saldo %= 480
+
 print(saldo)
 
 # atribuição com exponênciação (**)
