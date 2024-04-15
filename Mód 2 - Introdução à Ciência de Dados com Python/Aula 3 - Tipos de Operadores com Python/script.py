@@ -1,16 +1,12 @@
-saldo = 1000
-saque = 200
-limite = 100
+# São operadores utilizados para comparar se os dois objetos testados ocupam a mesma posição na memória.
 
-# operador "e" (and) - para ser True TUDO tem que ser true
-saldo >= saque and saque <= limite    
+# operador "é" (is)
+curso = 'Curso de Python'
+nome_curso = curso
+saldo, limite = 200, 200
 
-# operador "ou" (or) - para ser True, apenas um precisa ser True
-saldo >= saque or saque <= limite
+curso is nome_curso
 
-# operador de negação, inverso (not)
-not 1000 > 1500
+curso is not nome_curso
 
-# parênteses 
-conta_especial = true
-(saldo >= saque and saque <= limite) or (conta_especial and saldo >= saque)
+saldo is limite
