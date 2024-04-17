@@ -1,49 +1,42 @@
+# ===== Interpolação de Variáveis ======
+
+# > EXEMPLO
+nome = 'Pedro Judah'
+idade = 20
+peso = 97.3
+
+pessoa = {"nome":"Pedro Judah", "idade":20, "peso":97.3}
+# ----- no método old style (%) -----
+
+# str = %s
+# int = %d
+# float = %f
+
+print('Olá, meu nome é %s! Tenho %d anos e peso %fkg.' %(nome, idade, peso))
+
+# ----- no método format -----
+
+print('Olá, meu nome é {}! Tenho {} anos e peso {} kg.'.format(nome, idade, peso))
+
+# OU
+
+print('Olá, meu nome é {1}! Tenho {2} anos e peso {0} kg.'.format(peso, nome, idade))
+
+# OU
+
+print('Olá, meu nome é {nome}! Tenho {idade} anos e peso {peso} kg.'.format(nome=nome, idade=idade, peso=peso))
+
+# OU  (Dicionário)
+
+print('Olá, meu nome é {nome}! Tenho {idade} anos e peso {peso} kg.'.format(**pessoa))
 
 
-# == etapa 1 - conhecendo métodos úteis da classe string ==
+# ----- no método f string -----
 
-# > métodos para mudar o case dos caracteres
+print(f'Olá, meu nome é {nome}! Tenho {idade} anos e peso {peso} kg.')
 
-curso = "pYthON"
+# -----
 
-# ----- método para maiúsculas (uppercase)
+PI = 3.14159
 
-print(curso.upper())
-
-# ----- método para minúsculas (lowercase)
-
-print(curso.lower())
-
-# ----- método para título (title)
-
-print(curso.title())
-
-# > métodos para eliminar espaços
-
-curso = "     Python  "
-
-# ----- método para eliminar todos os espaços (antes e depois)
-
-print(curso.strip())
-
-# ----- método para eliminar os espaços antes (left)
-
-print(curso.lstrip())
-
-# ----- método para eliminar os espaços depois
-
-print(curso.rstrip())
-
-# > junções e centralização
-
-curso = "Python"
-
-# ----- método para centralizar ----
-
-# recebe 2 valores: nº total de caracteres + algum caractere para completar o nº total
-print(curso.center(10, "!")) 
-
-# ---- método para juntar ------
-
-# recebe: o que será juntado + ONDE será juntado como ARGUMENTO
-print(".".join(curso))
+print(f'Valor de PI: {PI:.2f}')
