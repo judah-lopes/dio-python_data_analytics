@@ -1,42 +1,33 @@
-# ===== Interpolação de Variáveis ======
+# ====== etapa 1 - fatiamento de strings ======
 
 # > EXEMPLO
-nome = 'Pedro Judah'
-idade = 20
-peso = 97.3
 
-pessoa = {"nome":"Pedro Judah", "idade":20, "peso":97.3}
-# ----- no método old style (%) -----
+nome = 'Pedro Judah Gomes Nogueira Lopes'
 
-# str = %s
-# int = %d
-# float = %f
+# ----- para um caractere específico -----
 
-print('Olá, meu nome é %s! Tenho %d anos e peso %fkg.' %(nome, idade, peso))
+print(nome[0])
 
-# ----- no método format -----
+# ----- para um grupo de caracteres *a partir da posição inicial* (:...) -----
 
-print('Olá, meu nome é {}! Tenho {} anos e peso {} kg.'.format(nome, idade, peso))
+print(nome[:5])      # <- do início : até posição 5 - 1 
 
-# OU
+# ----- para um todos os caracteres *a partir de um início* (...:) -----
 
-print('Olá, meu nome é {1}! Tenho {2} anos e peso {0} kg.'.format(peso, nome, idade))
+print(nome[6:])      # <- da posição 6 : pra frente
 
-# OU
+# ----- para um grupo de caracteres especificado (...:...)  -----
 
-print('Olá, meu nome é {nome}! Tenho {idade} anos e peso {peso} kg.'.format(nome=nome, idade=idade, peso=peso))
+print(nome[6:11])   # <- da posição 6 : até a posição 11 - 1
 
-# OU  (Dicionário)
+# ----- para um grupo de caracteres especificado e com um step (...:...:...) -----
 
-print('Olá, meu nome é {nome}! Tenho {idade} anos e peso {peso} kg.'.format(**pessoa))
+print(nome[6:11:2]) # <- da posição 6 : até a 11 - 1 : pulando de 2 em 2 caracteres
 
+# ----- para a string sem nenhum parâmetro (:) -----
 
-# ----- no método f string -----
+print(nome[:])
 
-print(f'Olá, meu nome é {nome}! Tenho {idade} anos e peso {peso} kg.')
+# ----- para a string invertida -----
 
-# -----
-
-PI = 3.14159
-
-print(f'Valor de PI: {PI:.2f}')
+print(nome[::-1])
