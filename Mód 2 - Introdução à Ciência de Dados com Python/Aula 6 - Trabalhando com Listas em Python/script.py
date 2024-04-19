@@ -1,94 +1,100 @@
-# ====== criação e metodo list ======
+# ==== etapa 2 - métodos da classe list ====
 
-# ------------ CRIAÇÃO ------------
+# ---- método .append (adicionar) ----
+lista = []
 
-# ---- com colchete ----
-frutas = []   # <--- vazia
+lista.append(1)
+lista.append('python')
+lista.append([10, 20, 30])
 
-frutas = ["laranja", "maca", "uva"]
+# >> [1, 'python', [10, 20, 30]]
 
-# ---- com método list ----
-letras = list('python')
+# ---- método .clear (limpar a lista) ----
+lista = [1, 'python', [10, 20, 30]]
 
-# ---- com list + range ----
-numeros = list(range(10))
+lista.clear()
 
-# ---- Em uma lista, podemos aceitar dados de vários tipos ----
+# >> []
 
-carros = ['ferrari', 'f8', 420000, 2020, 2900, 'Brasília', True]
+# ---- método .copy (copiar) ----
+lista = [1, 'python', [10, 20, 30]]
 
-# ------------ ACESSO ------------
+lista2 = lista.copy()
 
-# ---- acesso direto usando índices ([i]) ----
-frutas = ['maçã','laranja', 'uva', 'pera']
+print(lista)
+print(lista2.append('esta é a cópia'))
 
-# - índices positivos -
-print(frutas[0])    # >> maçã
-print(frutas[2])    # >> uva
+# >> [1, 'python', [10, 20, 30]]
+# >> [1, 'python', [10, 20, 30],'esta é a cópia']
 
-# - índices negativos -
-print(frutas[-1])   # >> pera
-print(frutas[-3])   # >> laranja
+# ---- método .count (conta quantas vezes um elemento aparece na lista) ----
+cores = ['verde', 'amarelo', 'verde', 'azul', 'amarelo', 'verde']
 
-# ---- acesso a listas aninhadas ([[], [], []]) ----
-matriz = [[1, 'a', 2],
-		  ['b', 3, 4],
-		  [6, 5, 'c']]
+cores.count('verde')   # >> 3
+cores.count('amarelo') # >> 2
+cores.count('azul')    # >> 1
 
-matriz[0]      # >> [1, 'a', 2]
-matriz[0][0]   # >> 1
-matriz[0][-1]  # >> 2
-matriz[-1][-1] # >> 'c'
+# ---- método .extend (junta duas listas) ----
+linguagens = ['js', 'c', 'python']
 
-# ---- fatiamento (...:...:...) ----
-lista = ['p', 'y', 't', 'h', 'o', 'n']
+linguagens.extend(['java', 'swift'])
 
-lista[2:]     # >> ['t', 'h', 'o', 'n']
-lista[:2]     # >> ['p', 'y']
-lista[1:3]    # >> ['y', 't']
-lista[0:3:2]  # >> ['p', 't']
-lista[::]     # >> ['p', 'y', 't', 'h', 'o', 'n']
-lista[::-1]   # >> ['n', 'o', 'h', 't', 'y', 'p']
+# >> ['js', 'c', 'python', 'java', 'swift']
 
-# ---- iterar listas (for) ----
-carros = ['gol', 'celta', 'palio']
+# ---- método .index (primeiro índice de um elemento) ----
+linguagens = ['js', 'c', 'java', 'python', 'java', 'swift']
 
-for carro in carros:
-	print(carro)
+linguagens.index('js')   # 0
+linguagens.index('java')   # 2
 
+# ---- método .pop (exclui o <ins>último</ins> elemento, ou pelo <ins>índice</ins>) ----
+linguagens = ['js', 'c', 'java', 'python', 'java', 'swift']
 
-# ---- função enumerate() ----
-carros = ['gol', 'celta', 'palio']
+linguagens.pop()   # >> 'swift'
+linguagens.pop()   # >> 'java'
+linguagens. pop(0) # >> 'js'
 
-for indice, carro in enumerate(carros):
-	print(f'{indice}: {carro}')
+# ---- método .remove (remove pelo <ins>nome</ins> do elemento) ----
+linguagens = ['js', 'c', 'java', 'python', 'java', 'swift']
 
-# ---- Compreensão de lista ----
-# A compreensão de lista oferece uma sintaxe mais curta quando você deseja: <ins>criar uma nova lista com base nos valores de uma já existente (__filtro__)</ins> ou <ins>gerar uma nova lista explicando alguma modificação nos elementos de uma lista existente</ins>.
+linguagens.remove('java')
 
-# - filtro - 
+# >> ['js', 'c', 'python', 'java', 'swift']
 
-# _Versão 1_
-numeros = [1, 20, 30, 28, 2, 9, 23]
-pares = []
+# ---- método .reverse (inverte a ordem dos elementos) ----
+linguagens = ['js', 'c', 'python', 'java', 'swift']
 
-for numero in numeros:
-	if numero % 2 == 0:
-		pares.append(numero)
+linguagens.reverse()
 
-# _Versão 2 (comprehension)_
-numeros = [1, 20, 30, 28, 2, 9, 23]
-pares = [numero for numero in numeros if numero % 2 == 0]
+# >> ['swift', 'java', 'python', 'c', 'js']
 
-# - modificando valores -
+# ---- método .sort (ordena a lista, mas não retorna nada) ----
 
-# _Versão 1_
-numeros = [1, 20, 30, 28, 2, 9, 23]
-quadrado = []
+# ____EXEMPLO____
+linguagens = ['js', 'c', 'python', 'java', 'swift']
 
-for numero in numeros:
-	quadrado.append(numero ** 2)
+print(linguagens)
 
-# _Versão 2_
-numeros = [1, 20, 30, 28, 2, 9, 23]
-quadrado = [numero ** 2 for numero in numeros]
+# - padrão (alfabética) - 
+linguagens.sort()
+# >> ['c', 'java', 'js', 'python', 'swift']
+
+# - ordem alfabética inversa -
+linguagens.sort(reverse=True)
+# >> ['swift', 'python', 'js', 'java', 'c']
+
+# - ordem crescente em tamanho -
+linguagens.sort(key=lambda x: len(x)) 
+# >> ['c', 'js', 'java', 'swift', 'python']
+
+# - ordem decrescente em tamanho -
+linguagens.sort(key=lambda x: len(x), reverse=True)
+# >> ['python', 'swift', 'java', 'js', 'c']
+
+# ---- método len (tamanho da lista) ----
+len(linguagens)
+# >> 5
+
+# ---- método sorted (ordena e retorna) ----
+sorted(linguagens, key=lambda x: len(x), reverse=True)
+# >> ['python', 'swift', 'java', 'js', 'c']
