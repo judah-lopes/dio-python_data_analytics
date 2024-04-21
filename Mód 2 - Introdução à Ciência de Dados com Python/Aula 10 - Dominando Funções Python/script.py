@@ -1,48 +1,55 @@
 # ==== etapa 1 - estudando a fundo as funções ====
 
-def exibir_mensagem():
-	print('Olá, mundo!')
+# --------------------------------------------------------------------------------------------------------
+# - Retringindo o tipo de declaração dos dados -
 
-def exibir_mensagem_2(nome):
-	print(f'Seja bem vindo, {nome}!')
+# ---- Postional only ----
+def criar_carro(modelo, ano, placa, /, marca, motor, combustivel):
+    print(modelo, ano, placa, marca, motor, combustivel)
 
-def exibir_mensagem_3(nome='anônimo'):
-	print(f'Seja bem vindo, {nome}!')
+criar_carro('Clio', 2001, 'JGB-4168', marca='Renault', motor='1.0', combustivel='Gasolina')
 
-exibir_mensagem()     
-exibir_mensagem_2("Pedro")
-exibir_mensagem_3()
+# criar_carro(modelo='Clio', ano=2001, placa='JGB-4168')  <--- inválido
 
-# - Funções que retornam valor ---------
+# ---- Keyword only ----
 
-def calcular_total(numeros):
-	return sum(numeros)
+def criar_carro(*, modelo, ano, placa, marca, motor, combustivel):
+    print(modelo, ano, placa, marca, motor, combustivel)
 
-def retorna_antecessor_e_sucessor(numero):
-	antecessor = numero - 1
-	sucessor = numero + 1
+criar_carro(modelo='Clio', ano=2001, placa='JGB-4168', marca='Renault', motor='1.0', combustivel='Gasolina')
 
-	return antecessor, sucessor
+# criar_carro('Clio', 2001, 'JGB-4168')    <----- inválido
 
-print(calcular_total([10, 20, 14]))
-print(retorna_antecessor_e_sucessor(10))
+# ---- (Keyword + Positional) only ----
 
-# - Funções com argumento nomeado -------
+def criar_carro(modelo, ano, placa, /, *, marca, motor, combustivel):
+    print(modelo, ano, placa, marca, motor, combustivel)
 
-# Apenas o valor:
-def salvar_carro(marca, modelo, ano, placa):
-    print(f'Carro inserido com sucesso! {marca}/{modelo}/{ano}/{placa}')
-	
-salvar_carro('Renault', 'Clio', '2001', 'JGB-4168')
-salvar_carro(marca='Renault', modelo='Clio', ano='2001',placa='JGB-4168')
-salvar_carro(**{'marca': 'Renault', 'modelo': 'Clio', 'ano': '2001', 'placa': 'JGB-4168'})  
+criar_carro('Clio', 2001, 'JGB-4168', marca='Renault', motor='1.0', combustivel='Gasolina')  
 
-# - *args e **kwargs --------------------
+# criar_carro(modelo='Clio', ano=2001, placa='JGB-4168', 'Renault', '1.0', 'gasolina')   # <---- inválido
 
-def exibir_poema(data_extenso, *args, **kwargs):
-	texto = '\n'.join(args)
-	meta_dados = '\n'.join([f'{chave.title()}: {valor}' for chave, valor in kwargs.items()])
-	mensagem = f'{data_extenso}\n\n{texto}\n\n{meta_dados}'
-	print(mensagem)
-	
-exibir_poema('Domingo, 10 de Agosto de 2003', 'Uma vez Flamengo', 'sempre Flamengo.','Flamengo sempre eu hei de ser.', autor='Pedro Judah', ano=2024)
+# --------------------------------------------------------------------------------------------------------
+# - usando funções como objeto -
+
+# ---- como parametro de outra função ----
+def somar(a,b):
+    return a + b
+
+def exibir_resultado(a, b, funcao):
+    resultado = funcao(a, b)
+    print(f'O resultado da operação {a} + {b} = {resultado}')
+
+exibir_resultado(10, 15, somar)
+
+# --------------------------------------------------------------------------------------------------------
+# - Usando escopo global dentro de funções -
+
+salario = 2000
+
+def salario_bonus(bonus):
+	global salario
+	salario += bonus
+	return salario
+
+print(salario_bonus(500))
